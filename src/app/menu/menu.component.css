@@ -1,0 +1,165 @@
+/* General Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Menu Categories */
+.menu-category {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+}
+
+.menu-category h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.menu-category p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Menu Items List */
+.list-group-item {
+  cursor: pointer;
+  padding: 15px;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
+}
+
+.list-group-item .text-primary {
+  font-weight: bold;
+  color: #28a745;
+}
+
+/* Selected Items */
+.selected-items {
+  margin-top: 20px;
+}
+
+.selected-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.selected-item img {
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.selected-item h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.selected-item p {
+  margin: 0;
+  color: #666;
+}
+
+.selected-item button {
+  margin-left: auto;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  color: white;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 5px;
+}
+
+.selected-item button:hover {
+  background-color: #c82333;
+}
+
+/* Total Price */
+.total-price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.total-price h4 {
+  margin: 10px 0;
+}
+
+/* Place Order Button */
+.place-order button {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  color: white;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.place-order button:hover {
+  background-color: #218838;
+}
+
+/* Order Details Form */
+.order-details {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.order-details h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.order-details label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.order-details input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.order-details input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.order-details button {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.order-details button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,72 @@
+<!-- Add this line inside the <head> tag -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="container mt-5 signup-container">
+  <h2 class="text-center mb-4">User Registration</h2>
+  
+  <form (ngSubmit)="onSubmit()" #recruiterForm="ngForm">
+    
+    <!-- Username Field -->
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input
+        type="text"
+        [(ngModel)]="username"
+        name="username"
+        id="username"
+        class="form-control form-control-lg"
+        required
+        minlength="3"
+        #usernameInput="ngModel"
+        placeholder="Enter your username"
+      />
+      <div *ngIf="usernameInput.invalid && usernameInput.touched" class="text-danger">
+        <small *ngIf="usernameInput.errors?.['required']">Username is required.</small><br />
+        <small *ngIf="usernameInput.errors?.['minlength']">Username must be at least 3 characters long.</small>
+      </div>
+    </div>
+
+    <!-- Mobile Field -->
+    <div class="mb-3">
+      <label for="mobile" class="form-label">Mobile</label>
+      <input
+        type="text"
+        [(ngModel)]="Mobile"
+        name="mobile"
+        id="mobile"
+        class="form-control form-control-lg"
+        required
+        pattern="^[0-9]{10}$"
+        #mobileInput="ngModel"
+        placeholder="Enter your mobile number"
+      />
+      <div *ngIf="mobileInput.invalid && mobileInput.touched" class="text-danger">
+        <small *ngIf="mobileInput.errors?.['required']">Mobile number is required.</small><br />
+        <small *ngIf="mobileInput.errors?.['pattern']">Mobile number must be exactly 10 digits.</small>
+      </div>
+    </div>
+
+    <!-- Email Field -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        id="email"
+        class="form-control form-control-lg"
+        required
+        email
+        #emailInput="ngModel"
+        placeholder="Enter your email address"
+      />
+      <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger">
+        <small *ngIf="emailInput.errors?.['required']">Email is required.</small><br />
+        <small *ngIf="emailInput.errors?.['email']">Please enter a valid email address.</small>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary btn-lg w-100 mt-3" [disabled]="recruiterForm.invalid">Register</button>
+  </form>
+</div>

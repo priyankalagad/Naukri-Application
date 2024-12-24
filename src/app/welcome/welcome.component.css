@@ -1,0 +1,121 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body and container setup */
+  body {
+    font-family: 'Arial', sans-serif;
+    /* background-color: #f4f7fa; */
+    /* Set background image */
+    background-size: cover; /* Cover the entire screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Ensure it doesn't repeat */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrollbars */
+  }
+  
+  /* Background Container */
+  .background-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* Set a max width for the container */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for content */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  }
+  
+  /* Welcome Text */
+  .welcome-text {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  /* Button Container */
+  .button-container {
+    margin-bottom: 30px;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268;
+  }
+  
+  /* Space between buttons */
+  .btn-space {
+    margin-right: 15px;
+  }
+  
+  /* Background Image (used as backdrop) */
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1; /* Light opacity for background visibility */
+    border-radius: 10px;
+    z-index: -1; /* Ensure the image stays behind the content */
+  }
+  
+  /* For showing the components dynamically */
+  app-student-login, app-recruiter-login, app-studentdashboard {
+    margin-top: 20px;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .welcome-text {
+      font-size: 18px;
+    }
+  
+    .btn {
+      width: 100%;
+      font-size: 14px;
+    }
+  
+    .button-container {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .btn-space {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+  

@@ -1,0 +1,70 @@
+<div class="container mt-5">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <div class="menu-container">
+    <div *ngFor="let category of menuItems" class="menu-category mb-4">
+      <h2 class="text-center">{{ category.name }}</h2>
+      <p class="text-center">{{ category.description }}</p>
+      
+      <ul class="list-group">
+        <li *ngFor="let item of category.items" 
+            (click)="selectItemImage(item.image, item.name, item.price)" 
+            class="list-group-item d-flex justify-content-between align-items-center">
+          {{ item.name }} - <span class="text-primary">rs{{ item.price }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div *ngIf="selectedItems.length > 0" class="mt-4">
+      <h3 class="text-center mb-4">Selected Items:</h3>
+      <div class="selected-items">
+        <div *ngFor="let selectedItem of selectedItems" class="selected-item mb-3 d-flex align-items-center">
+          <img [src]="selectedItem.image" alt="Selected Menu Item" class="menu-image rounded-circle" width="80" height="80">
+          <div class="ms-3">
+            <h4>{{ selectedItem.name }}</h4>
+            <p>Price: rs: {{ selectedItem.price }}</p>
+            <div class="quantity-control">
+              <input type="number" [(ngModel)]="selectedItem.quantity" min="1" (change)="changeQuantity(selectedItem, selectedItem.quantity)" class="form-control w-50">
+            </div>
+          </div>
+          <button class="btn btn-danger" (click)="deleteItem(selectedItem)">Remove</button>
+        </div>
+      </div>
+      
+      <div class="total-price text-center mt-4">
+        <h4>Total Price: rs{{ getTotalPrice() }}</h4>
+        <p>When you want to delete an item from the selected list, click once on it.</p>
+      </div>
+      
+      <!-- Place Order Button -->
+      <div class="place-order text-center mt-4">
+        <button class="btn btn-success" (click)="placeOrder()">Place Order</button>
+      </div>
+    </div>
+
+    <!-- Order Confirmation -->
+    <div *ngIf="orderPlaced" class="order-confirmation mt-4 text-center">
+      <h4>Thank you for your order! Your food will be delivered soon.</h4>
+      <router-outlet></router-outlet> 
+    </div>
+
+    <div *ngIf="orderDetailsVisible" class="order-details mt-4">
+      <h3>Order Details</h3>
+      <form (ngSubmit)="submitOrderDetails()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Your Name</label>
+          <input type="text" class="form-control" id="name" [(ngModel)]="orderDetails.name" name="name" required />
+        </div>
+        <div class="mb-3">
+          <label for="address" class="form-label">Delivery Address</label>
+          <input type="text" class="form-control" id="address" [(ngModel)]="orderDetails.address" name="address" required />
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="text" class="form-control" id="phone" [(ngModel)]="orderDetails.phone" name="phone" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Order</button>
+      </form>
+    </div>
+  </div>
+</div>

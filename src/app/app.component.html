@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Application</title>
+    
+    <!-- Google Font for Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* Global Styles */
+        body {
+            background-size: cover; /* Make the image cover the entire page */
+            background-position: center; /* Center the background image */
+            background-attachment: fixed; /* Keep the background fixed when scrolling */
+            font-family: 'Roboto', sans-serif; /* Apply Roboto font */
+            margin: 0;
+            padding: 0;
+            background-image: url("assets/background.jpg"); /* Add background image */
+        }
+
+        /* Header Style */
+        h2 {
+            background-color: rgba(131, 114, 148, 0.7); /* Transparent background */
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            font-family: 'Roboto', sans-serif; /* Use Roboto font */
+            border: 2px solid #5a4b6b; /* Border around the h2 */
+            width: 80%; /* Make the width of the box smaller than the full page */
+            margin: 20px auto; /* Center the h2 on the page */
+        }
+
+        /* Style for the app-welcome component */
+        app-welcome {
+            display: block;
+            text-align: center; 
+            margin-top: 20px;
+            border: 2px solid #0e0814; /* Border around the app-welcome box */
+            padding: 100px;
+            border-radius: 8px;
+            width: 60%; 
+            margin: 20px auto;
+            background-image: url("assets/lbg.jpg"); /* Background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Optional additional styling for app-welcome (you can customize further) */
+        app-welcome::before {
+            content: "Welcome In Taj!"; /* Custom message before the app-welcome component */
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(8, 5, 10);
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Heading for the page -->
+    <h2>Hello, This is Restaurant Application</h2>
+
+    <!-- Custom Component for Welcome -->
+    <app-welcome></app-welcome>
+    <!-- <app-menu-bar></app-menu-bar> -->
+
+    
+</body>
+
+</html>
+

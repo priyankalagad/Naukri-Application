@@ -1,0 +1,22 @@
+.center-text {
+    text-align: center;
+  }
+  
+  .img-style {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 20px auto;
+  }
+  
+  .button-style {
+    padding: 10px 20px;
+    background-color: #FF5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+  }
+  

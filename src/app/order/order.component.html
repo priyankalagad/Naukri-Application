@@ -1,0 +1,29 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Your Order</h2>
+  
+    <div class="selected-items">
+      <div *ngFor="let item of selectedItems" class="selected-item mb-3 d-flex align-items-center">
+        <img [src]="item.image" alt="Selected Item" class="menu-image rounded-circle" width="80" height="80">
+        <div class="ms-3">
+          <h4>{{ item.name }}</h4>
+          <p>Price: rs: {{ item.price }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="total-price text-center mt-4">
+      <h4>Total Price: rs: {{ totalPrice }}</h4>
+    </div>
+  
+    <!-- Address Form -->
+    <div class="address-form mt-4">
+      <label for="address">Enter Delivery Address:</label>
+      <textarea id="address" class="form-control" rows="3" placeholder="Enter your address"></textarea>
+    </div>
+  
+    <!-- Submit Order Button -->
+    <div class="text-center mt-4">
+      <button class="btn btn-success" (click)="submitOrder()">Submit Order</button>
+    </div>
+  </div>
+  

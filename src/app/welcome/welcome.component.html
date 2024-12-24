@@ -1,0 +1,39 @@
+<div class="background-container">
+  <p class="welcome-text">Welcome to Taj, Discover the best food & drinks</p>
+  <img src="assets/background.jpg" alt="Food Background" class="background-image" />
+
+  <!-- Buttons for Navigation -->
+  <div class="button-container">
+    <button class="btn btn-primary btn-space" (click)="showLogin()">Login</button>
+    <button class="btn btn-secondary btn-space" (click)="showRegister()">SignUp</button>
+    <button class="btn btn-info btn-space" (click)="showAboutus()">About Us</button>
+    <button class="btn btn-warning btn-space" (click)="showContactus()">Contact Us</button>
+    <!-- <button class="btn btn-warning btn-space" (click)="showAdmin()">Admin Login</button> -->
+  </div>
+  
+  <!-- Conditional Rendering of Components -->
+  <div *ngIf="currentComponent === 'login'">
+    <app-student-login (loginSuccess)="onLoginSuccess()"></app-student-login>
+  </div>
+
+  <div *ngIf="currentComponent === 'register'">
+    <app-recruiter-login></app-recruiter-login>
+  </div>
+
+  <div *ngIf="currentComponent === 'isLoggedIn'">
+    <app-studentdashboard (logout)="showWelcomePage()"></app-studentdashboard>
+  </div>
+
+  <div *ngIf="currentComponent === 'aboutus'">
+    <app-about-us (logout)="showAboutus()"></app-about-us>
+  </div>
+
+  <div *ngIf="currentComponent === 'contactus'">
+    <app-contact-us (logout)="showContactus()"></app-contact-us>
+  </div>
+
+  <div *ngIf="currentComponent === 'login1'">
+    <app-login (logout)="showAdmin()"></app-login>
+  </div>
+
+</div>
